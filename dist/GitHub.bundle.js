@@ -1653,7 +1653,7 @@ var Repository = function (_Requestable) {
    }, {
       key: 'getCommit',
       value: function getCommit(sha, cb) {
-         return this._request('GET', '/repos/' + this.__fullname + '/git/commits/' + sha, null, cb);
+         return this._request('GET', '/repos/' + this.__fullname + '/commits/' + sha, null, cb);
       }
 
       /**
