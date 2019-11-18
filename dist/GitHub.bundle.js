@@ -2531,6 +2531,21 @@ var Repository = function (_Requestable) {
       }
 
       /**
+       * Create a review about a specific pull request
+       * @see https://developer.github.com/v3/pulls/reviews/#create-a-pull-request-review
+       * @param {number} number - the PR you wish to review
+       * @param {Object} options - the review information
+       * @param {Requestable.callback} [cb] - will receive the PR from the API
+       * @return {Promise} - the promise for the http request
+       */
+
+   }, {
+      key: 'reviewPullRequest',
+      value: function reviewPullRequest(number, options, cb) {
+         return this._request('POST', '/repos/' + this.__fullname + '/pulls/' + number + '/reviews', options, cb);
+      }
+
+      /**
        * Get information about all projects
        * @see https://developer.github.com/v3/projects/#list-repository-projects
        * @param {Requestable.callback} [cb] - will receive the list of projects
